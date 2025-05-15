@@ -1,0 +1,26 @@
+{
+  "name": "storeservices",
+  "version": "1.0.0",
+  "description": "Store Services for Zeo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.14.3",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eng-Bode2004/Zeo-StoreServices.git"
+  },
+  "author": "Abdelrahman Ashraf",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eng-Bode2004/Zeo-StoreServices/issues"
+  },
+  "homepage": "https://github.com/Eng-Bode2004/Zeo-StoreServices#readme"
+}
