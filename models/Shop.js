@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const StoreSchema = new mongoose.Schema({
 
-    ShopOwner:{
+    StoreOwner:{
         type:mongoose.Schema.Types.ObjectId,
         ref: 'Users',
     },
@@ -31,6 +31,14 @@ const StoreSchema = new mongoose.Schema({
         type: String,
     },
 
+    PII_Image:{
+        type: String,
+    },
+
+    PII_Number:{
+        type:Number,
+    },
+
     StoreType:{
         type:mongoose.Schema.Types.ObjectId,
         ref: 'StoreType',
@@ -44,8 +52,12 @@ const StoreSchema = new mongoose.Schema({
     ShopItems:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'ShopItem',
-    }]
+    }],
 
+    Address:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Address',
+    },
 
 })
 

@@ -1,5 +1,5 @@
 // Connect To DataBase
-require('./config/DataBase');
+require('./Config/DataBase');
 const express = require('express');
 
 
@@ -11,5 +11,7 @@ app.use(express.json()); // Middleware to parse JSON
 
 
 
-                            // Main Routes
-
+ // Main Routes
+                            //  Store Routes //
+ImagesRoutes = require('./routes/ShopRoutes');
+app.use('/api/stores',ImagesRoutes);
