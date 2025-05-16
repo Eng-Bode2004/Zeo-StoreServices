@@ -11,3 +11,7 @@ app.use(express.json()); // Middleware to parse JSON
 
 
 
+ // Main Routes
+                            //  Store Routes //
+StoreRoutes = require('./routes/ShopRoutes');
+app.use('/api/stores',StoreRoutes);
