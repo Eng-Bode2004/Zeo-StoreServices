@@ -3,6 +3,6 @@ const router = express.Router();
 
 const ShopController = require("../controllers/ShopController");
 
-router.post('/online/:ShopOwner',ShopController.createStore);
+router.post('/online/:StoreOwner',ShopController.createStore);
 
 module.exports = router;
