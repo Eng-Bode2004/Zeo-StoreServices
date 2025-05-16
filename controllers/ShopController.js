@@ -6,7 +6,7 @@ class ShopController{
 
             const { StoreOwner }= req.params;
             const {name, Logo,cover_image, PII_Image, PII_Number, StoreType, StoreCategory } = req.body;
-            if(!ShopOwner){
+            if(!StoreOwner){
                 res.status(400).send({
                     error: 'Enter ShopOwner id ',
                 });
