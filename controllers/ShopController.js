@@ -4,8 +4,8 @@ class ShopController{
     async createStore(req, res){
         try {
 
-            const { ShopOwner }= req.params;
-            const { StoreOwner, name, Logo,cover_image, PII_Image, PII_Number, StoreType, StoreCategory } = req.body;
+            const { StoreOwner }= req.params;
+            const {name, Logo,cover_image, PII_Image, PII_Number, StoreType, StoreCategory } = req.body;
             if(!ShopOwner){
                 res.status(400).send({
                     error: 'Enter ShopOwner id ',
