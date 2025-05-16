@@ -5,18 +5,18 @@ class ShopController{
         try {
 
             const { ShopOwner }= req.params;
-            const { StoreOwner, name, Logo, PII_Image, PII_Number, StoreType, StoreCategory } = req.body;
+            const { StoreOwner, name, Logo,cover_image, PII_Image, PII_Number, StoreType, StoreCategory } = req.body;
             if(!ShopOwner){
                 res.status(400).send({
                     error: 'Enter ShopOwner id ',
                 });
             }
-            if (!name || !Logo || !PII_Image || !PII_Number || !StoreType||!StoreCategory){
+            if (!name || !Logo ||!cover_image || !PII_Image || !PII_Number || !StoreType||!StoreCategory){
                 res.status(400).send({
                     error: 'Enter all Fields Required in The Request',
                 })
             }
-            const shopData = {StoreOwner, name, Logo, PII_Image, PII_Number, StoreType, StoreCategory }
+            const shopData = {StoreOwner, name, Logo,cover_image, PII_Image, PII_Number, StoreType, StoreCategory }
             const newShop = await ShopService.createShop(shopData);
             res.status(200).send({
                 status: 'success',

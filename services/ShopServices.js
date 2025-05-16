@@ -2,9 +2,9 @@ const ShopModel = require('../models/Shop');
 
 class ShopServices{
     async createShop(shopData) {
-        const { StoreOwner, name, Logo, PII_Image, PII_Number, StoreType, StoreCategory } = shopData;
+        const { StoreOwner, name, Logo, cover_image ,PII_Image, PII_Number, StoreType, StoreCategory } = shopData;
 
-        if (!StoreOwner || !name || !Logo || !PII_Image || !PII_Number || !StoreType||!StoreCategory) {
+        if (!StoreOwner || !name || !Logo ||!cover_image || !PII_Image || !PII_Number || !StoreType||!StoreCategory) {
             return Promise.reject(new Error("Please fill all required fields"));
         }
 
@@ -18,6 +18,7 @@ class ShopServices{
             name,
             approved: false,
             Logo,
+            cover_image,
             PII_Image,
             PII_Number,
             StoreType,
