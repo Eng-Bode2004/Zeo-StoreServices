@@ -1,7 +1,7 @@
 const ShopService = require('../services/ShopServices');
 
 class ShopController{
-    async createStore(req, res){
+    async createOnlineStore(req, res){
         try {
 
             const { StoreOwner }= req.params;
@@ -17,7 +17,7 @@ class ShopController{
                 })
             }
             const shopData = {StoreOwner, name, Logo,cover_image, PII_Image, PII_Number, StoreType, StoreCategory }
-            const newShop = await ShopService.createShop(shopData);
+            const newShop = await ShopService.createOnlineShop(shopData);
             res.status(200).send({
                 status: 'success',
                 message: 'Shop created successfully',
