@@ -56,6 +56,21 @@ class ShopServices{
     //     return newShop;
     // }
 
+    async updateAddress(shopId, addressId) {
+        if (!shopId || !addressId) {
+            return Promise.reject(new Error("Both shopId and addressId are required"));
+        }
+
+        return ShopModel.findByIdAndUpdate(shopId, {$set: {Address: addressId}}, {new: true});
+    }
+
+    async getShopsRelatedToUser(userId) {
+        if (!userId) {
+            return Promise.reject(new Error("Enter UseId required"));
+        }
+        return ShopModel.find({StoreOwner:userId});
+    }
+
 }
 
 module.exports = new ShopServices;

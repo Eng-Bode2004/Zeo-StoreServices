@@ -35,6 +35,53 @@ class ShopController{
 
     }
 
+    async updateShopAddress(req, res) {
+        try {
+            const { shopId } = req.params;
+            const { addressId } = req.body;
+
+            if (!addressId) {
+                return res.status(400).json({
+                    status: 'failure',
+                    message: 'Address ID is required in body.'
+                });
+            }
+
+            const updatedShop = await ShopService.updateAddress(shopId, addressId);
+
+            res.status(200).json({
+                status: 'success',
+                message: 'Shop address updated successfully.',
+                shop: updatedShop
+            });
+        } catch (error) {
+            res.status(400).json({
+                status: 'failure',
+                message: 'Failed to update shop address.',
+                error: error.message
+            });
+        }
+    }
+
+    async getUserShops(req, res) {
+        try {
+            const { userId } = req.params;
+
+            const shops = await ShopService.getShopsRelatedToUser(userId);
+
+            res.status(200).json({
+                status: 'success',
+                message: 'User shops retrieved successfully.',
+                shops: shops
+            });
+        } catch (error) {
+            res.status(400).json({
+                status: 'failure',
+                message: 'Failed to retrieve shops.',
+                error: error.message
+            });
+        }
+    }
 
 }
 
